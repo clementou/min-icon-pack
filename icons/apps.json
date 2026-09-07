@@ -30,5 +30,7 @@
   {"id":"united-airlines","name":"United Airlines","package":"com.united.mobile.android"},
   {"id":"waymo","name":"Waymo","package":"com.waymo.carapp"},
   {"id":"wealthfront","name":"Wealthfront","package":"com.wealthfront"},
-  {"id":"zoom","name":"Zoom","package":"us.zoom.videomeetings"}
+  {"id":"zoom","name":"Zoom","package":"us.zoom.videomeetings"},
+  {"id":"safety","name":"Personal Safety","package":"com.google.android.apps.safetyhub"},
+  {"id":"welcome","name":"Welcome Virtual Doorman","package":"com.vdm.welcomeapp"}
 ]

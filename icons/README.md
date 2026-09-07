@@ -1,10 +1,10 @@
 # Min additions
 
-The 32 icons added on top of the original Min pack. `scripts/build_apk.py` bundles these into the installable APK; see the [root README](../README.md).
+The 34 icons added on top of the original Min pack. `scripts/build_apk.py` bundles these into the installable APK; see the [root README](../README.md).
 
 To apply one without installing the pack, Nova can override icons individually: extract `min-additions.zip` on the phone, long-press an app shortcut, choose **Edit** (pencil), tap its icon, choose **Gallery apps**, and pick the matching PNG. Keep the whole square image including its transparent padding — Min relies on those margins to keep icons small.
 
-Open `gallery.html` to compare the additions with official Play Store artwork and original Min icons. `preview.jpg` shows all 32 on a dark background.
+Open `gallery.html` to compare the additions with official Play Store artwork and original Min icons. `preview.jpg` shows all 34 on a dark background.
 
 ## Sources and editable files
 

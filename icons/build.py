@@ -38,6 +38,8 @@ def make_mask(app, image, layer='main'):
             high, low = max(r,g,b), min(r,g,b)
             if layer == 'person':
                 keep = b > 160 and g > 145 and r < 110
+            elif layer == 'safety-blue':
+                keep = b > r*1.3 and high-low > 65
             elif key in WHITE_ON_COLOR:
                 keep = low > 180 and high-low < 65
             elif key in DARK_ON_LIGHT:
@@ -48,7 +50,7 @@ def make_mask(app, image, layer='main'):
                 keep = r > 90 and r > g*1.5 and r > b*1.15
             else:
                 keep = high-low > 65 and low < 180
-            if key == 'beli' and (x<55 or x>457 or y<55 or y>457):
+            if key in {'beli','chatgpt'} and (x<55 or x>457 or y<55 or y>457):
                 keep = False  # baked-in black corner pixels in this publisher image
             if key == 'sutter-health' and x < 180 and y > 410:
                 keep = False  # omit the tiny trademark notice
@@ -147,6 +149,8 @@ def build():
             if not bounds:
                 raise ValueError('Empty mask: '+key)
             overlay = trace(key+'-person',make_mask(app,image,'person')) if key=='microsoft-authenticator' else ''
+            if key=='safety':
+                overlay=trace(key+'-blue',make_mask(app,image,'safety-blue'))
             svg = style_svg(app,trace(key,mask),bounds,overlay)
             method = 'Traced publisher Play Store artwork'
         (ROOT/'svg'/(key+'.svg')).write_text(svg)
@@ -187,6 +191,7 @@ def gallery(report):
 <style>:root{font-family:system-ui;color:#eee;background:#191b20;color-scheme:dark;--tile:#292d33;--size:144px}body{margin:28px auto;padding:0 22px;max-width:1300px}h1{font-size:28px;margin-bottom:8px}p{color:#b8bec8;line-height:1.5}a{color:#abcaff}header{margin-bottom:24px}.controls{display:flex;gap:20px;flex-wrap:wrap;align-items:center}input[type=search]{padding:10px;background:#2c3037;border:1px solid #68707e;border-radius:6px;color:white;font:inherit}#grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}article{background:var(--tile);border-radius:12px;padding:16px}h2{font-size:15px;margin:0 0 12px}figure{margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0}figcaption{font-size:11px;color:#b8bec8;margin:6px 0}.pair{display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:150px}.source{width:76px;height:76px;border-radius:12px}.min{width:var(--size);height:var(--size);object-fit:contain}footer{display:flex;gap:20px;margin-top:12px;font-size:12px}#refs{display:flex;flex-wrap:wrap;background:var(--tile);border-radius:12px;margin:16px 0 28px;padding:8px}#refs figure{flex:1}#refs .min{max-width:100%}[hidden]{display:none!important}</style>
 <header><h1>Min / additions</h1><p>32 apps. Publisher artwork → editable SVG → transparent 192 × 192 PNG. The 1Password PNG is the unchanged Min original. Mini Metro’s routes are shortened to fit. Click PNG to save an icon.</p><p><a href="min-additions.zip" download>Download all 32 PNGs</a> · <a href="README.md">Nova instructions</a></p><div class="controls"><input id="search" type="search" placeholder="Find an app…" aria-label="Find an app"><label>Preview background <input id="background" type="color" value="#292d33"></label><label>Preview size <input id="size" type="range" min="64" max="192" value="144"></label></div></header><p>Original Min icons, shown at the same canvas size:</p><section id="refs">REFS</section><main id="grid">CARDS</main>
 <script>document.querySelector('#search').oninput=e=>{for(const card of document.querySelectorAll('article'))card.hidden=!card.dataset.search.includes(e.target.value.toLowerCase())};document.querySelector('#background').oninput=e=>document.documentElement.style.setProperty('--tile',e.target.value);document.querySelector('#size').oninput=e=>document.documentElement.style.setProperty('--size',e.target.value+'px');</script></html>'''.replace('REFS',refs).replace('CARDS','\n'.join(cards))
+    page=page.replace('32 apps',str(len(APPS))+' apps').replace('all 32 PNGs','all '+str(len(APPS))+' PNGs')
     (ROOT/'gallery.html').write_text(page)
 
 if __name__=='__main__':

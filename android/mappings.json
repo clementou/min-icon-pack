@@ -1,5 +1,15 @@
 [
   {
+    "component": "com.google.android.apps.safetyhub/com.google.android.apps.safetyhub.LauncherActivity",
+    "drawable": "min_safety",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.vdm.welcomeapp/com.vdm.welcomeapp.Activity.LoginActivity",
+    "drawable": "min_welcome",
+    "source": "device launcher query"
+  },
+  {
     "component": "app.revanced.android.apps.youtube.music/app.revanced.android.apps.youtube.music.revanced_original_1",
     "drawable": "youtubemusic",
     "source": "device launcher query; reviewed product migration"

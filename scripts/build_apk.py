@@ -31,6 +31,10 @@ def resources(stage):
         for name in apk.namelist():
             if re.fullmatch(r'res/drawable-xxhdpi-v4/(ic_calendar_\d+|iconback|iconmask|iconupon)\.png',name):
                 (support/Path(name).name).write_bytes(apk.read(name))
+            if re.fullmatch(r'res/mipmap-\w+-v4/ic_launcher\.png',name):
+                target=stage/Path(name).parent/'min_pack.png'
+                target.parent.mkdir(parents=True,exist_ok=True)
+                target.write_bytes(apk.read(name))
     names={p.stem for p in (stage/'res').glob('*/*.png')}
     apps=json.loads((ROOT/'icons/apps.json').read_text())
     replacements={a['package']:'min_'+a['id'].replace('-','_') for a in apps}
@@ -39,9 +43,6 @@ def resources(stage):
         name=replacements[app['package']]
         shutil.copyfile(ROOT/'icons/png'/(app['id']+'.png'),drawable/(name+'.png'))
         names.add(name); catalog.append((name,app['name']))
-    # Native pack glyph, deliberately distinct from an app icon.
-    vector=stage/'res/drawable'; vector.mkdir()
-    (vector/'min_pack.xml').write_text('''<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="48dp" android:height="48dp" android:viewportWidth="48" android:viewportHeight="48"><path android:fillColor="#282B30" android:pathData="M0,0h48v48h-48z"/><path android:fillColor="#FFFFFF" android:pathData="M10,34V14h6l8,12 8,-12h6v20h-6V24l-8,11 -8,-11v10z"/></vector>''')
     original=ET.parse(ROOT/'original/assets/appfilter.xml').getroot()
     merged=ET.Element('resources')
     mappings={}; dropped=[]
@@ -154,7 +155,14 @@ def build():
             '-sigalg','SHA256withRSA','-validity','10000','-dname','CN=Min Extended')
         key.chmod(0o600)
     dist=ROOT/'dist'; dist.mkdir(exist_ok=True)
-    out=dist/'min-extended-1.0.0.apk'
+    manifest=ET.parse(ROOT/'android/AndroidManifest.xml').getroot()
+    ns='{http://schemas.android.com/apk/res/android}'
+    version=manifest.get(ns+'versionName')
+    if not re.fullmatch(r'\d+\.\d+\.\d+',version):
+        raise ValueError('Expected a semantic version in AndroidManifest.xml')
+    report['version']=version
+    report['version_code']=int(manifest.get(ns+'versionCode'))
+    out=dist/('min-extended-'+version+'.apk')
     # apksigner reads a password file sequentially, so one file cannot serve both prompts.
     env['MIN_KEYSTORE_PASSWORD']=password.read_text().strip()
     run(tools/'apksigner','sign','--ks',key,'--ks-key-alias','min','--ks-pass','env:MIN_KEYSTORE_PASSWORD',
