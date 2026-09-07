@@ -1,0 +1,272 @@
+[
+  {
+    "component": "app.revanced.android.apps.youtube.music/app.revanced.android.apps.youtube.music.revanced_original_1",
+    "drawable": "youtubemusic",
+    "source": "device launcher query; reviewed product migration"
+  },
+  {
+    "component": "app.revanced.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity",
+    "drawable": "youtube",
+    "source": "device launcher query; reviewed product migration"
+  },
+  {
+    "component": "com.azure.authenticator/com.azure.authenticator.ui.LaunchActivity",
+    "drawable": "min_microsoft_authenticator",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.beliapp.myapp/com.beliapp.myapp.MainActivity",
+    "drawable": "min_beli",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.blizzard.messenger/com.blizzard.messenger.ui.splash.SplashActivity",
+    "drawable": "battlenet",
+    "source": "device launcher query; reviewed product migration"
+  },
+  {
+    "component": "com.chase.sig.android/com.chase.sig.android.activity.SplashActivity",
+    "drawable": "chase",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "com.chipotle.ordering/com.chipotle.ordering.ui.activity.intro.IntroActivity",
+    "drawable": "min_chipotle",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.dd.doordash/com.doordash.consumer.ui.login.LauncherActivity",
+    "drawable": "min_doordash",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.discord/com.discord.main.MainDefault",
+    "drawable": "discord",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "com.dunkinbrands.otgo/com.cardfree.android.dunkindonuts.activities.LauncherActivity",
+    "drawable": "min_dunkin",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.fidelity.android/com.fidelity.android.activity.AppConfigLoaderActivity",
+    "drawable": "min_fidelity",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.fitbit.FitbitMobile/com.fitbit.HealthBrandedAlias",
+    "drawable": "min_google_health",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.google.android.apps.adm/com.google.android.apps.adm.activities.MainActivity",
+    "drawable": "devicemanager",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "com.google.android.apps.authenticator2/com.google.android.apps.authenticator2.main.MainActivity",
+    "drawable": "googleauthenticator",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "com.google.android.apps.paidtasks/com.google.android.apps.paidtasks.activity.LaunchActivity",
+    "drawable": "googleopinionrewards",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "com.google.android.apps.subscriptions.red/com.google.android.apps.subscriptions.red.LauncherActivity",
+    "drawable": "min_google_one",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.google.android.apps.tycho/com.google.android.apps.tycho.AccountDetailsActivity",
+    "drawable": "min_google_fi",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.google.android.apps.walletnfcrel/com.google.commerce.tapandpay.android.wallet.WalletActivity",
+    "drawable": "googlewallet",
+    "source": "device launcher query; reviewed product migration"
+  },
+  {
+    "component": "com.google.android.videos/com.google.android.videos.GoogleTvEntryPoint",
+    "drawable": "playmovies",
+    "source": "device launcher query; reviewed product migration"
+  },
+  {
+    "component": "com.grubhub.android/com.grubhub.dinerapp.android.splash.SplashActivity",
+    "drawable": "min_grubhub",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.infonow.bofa/com.bofa.ecom.marvel.application.Flagscape",
+    "drawable": "bofa",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "com.instacart.client/com.instacart.client.browse.ICBrowseActivity",
+    "drawable": "min_instacart",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.laurencedawson.reddit_sync/com.laurencedawson.reddit_sync.ui.activities.HomeActivity.Default",
+    "drawable": "reddit",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "com.lemonadeinc.lemonade/com.lemonadeinc.lemonade.ui.core.MainActivity",
+    "drawable": "min_lemonade",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.linkedin.android/com.linkedin.android.authenticator.LaunchActivityDefault",
+    "drawable": "linkedin",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "com.okta.android.auth/com.okta.android.auth.activity.SplashActivity",
+    "drawable": "min_okta_verify",
+    "source": "https://github.com/Delta-Icons/android/blob/master/app/src/main/assets/appfilter.xml"
+  },
+  {
+    "component": "com.onepassword.android/com.onepassword.android.app.StartActivity",
+    "drawable": "min_1password",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.openai.chatgpt/com.openai.chatgpt.MainActivity",
+    "drawable": "min_chatgpt",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.ouraring.oura/com.ouraring.oura.launcher.LauncherActivity",
+    "drawable": "min_oura",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.pagerduty.android/com.pagerduty.android.feature.main.view.ui.MainActivity",
+    "drawable": "min_pagerduty",
+    "source": "https://github.com/Delta-Icons/android/blob/master/app/src/main/assets/appfilter.xml"
+  },
+  {
+    "component": "com.paypal.android.p2pmobile/com.paypal.oslo.app.MainActivity",
+    "drawable": "paypal",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "com.renpho.health/com.renpho.health.SplashActivity",
+    "drawable": "min_renpho_health",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.roborock.smart/com.roborock.smart.refactor.ui.splash.SplashActivity",
+    "drawable": "min_roborock",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.schwab.mobile/com.schwab.mobile.activity.SplashScreenActivity",
+    "drawable": "min_schwab",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.sonos.acr2/com.sonos.passport.ui.launcheractivity.LauncherActivity",
+    "drawable": "sonos",
+    "source": "device launcher query; reviewed product migration"
+  },
+  {
+    "component": "com.supercell.clashroyale/com.supercell.titan.GameApp",
+    "drawable": "clashroyale",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "com.teslamotors.tesla/com.teslamotors.TeslaApp.MainActivity",
+    "drawable": "min_tesla",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.twitter.android/com.x.android.main.MainActivity",
+    "drawable": "twitter",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "com.ubercab.eats/com.ubercab.eats.core.activity.LauncherActivity",
+    "drawable": "min_uber_eats",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.ubercab/com.ubercab.presidio.app.core.root.RootActivity",
+    "drawable": "uber",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "com.united.mobile.android/com.united.mobile.android.ui.splash.SplashActivity",
+    "drawable": "min_united_airlines",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.venmo/com.venmo.android.platform.AppExperienceLauncherActivity",
+    "drawable": "venmo",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "com.waymo.carapp/com.google.android.apps.car.carapp.LaunchActivity",
+    "drawable": "min_waymo",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.wealthfront/com.wealthfront.MainActivity",
+    "drawable": "min_wealthfront",
+    "source": "device launcher query"
+  },
+  {
+    "component": "com.wf.wellsfargomobile/com.wf.wellsfargomobile.LauncherActivity",
+    "drawable": "wellsfargo",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "com.yelp.android/com.yelp.android.home.ui.RootSingleActivity",
+    "drawable": "yelp",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "com.zhiliaoapp.musically/com.ss.android.ugc.aweme.splash.SplashActivity",
+    "drawable": "min_tiktok",
+    "source": "device launcher query"
+  },
+  {
+    "component": "gov.dhs.cbp.pspd.mpc/gov.cbp.pspd.mpc.ui.BaseActivity",
+    "drawable": "min_cbp_mpc",
+    "source": "device launcher query"
+  },
+  {
+    "component": "net.sharewire.parkmobilev2/net.easypark.android.mvp.splash.SplashActivity",
+    "drawable": "min_parkmobile",
+    "source": "device launcher query"
+  },
+  {
+    "component": "nz.co.codepoint.minimetro/com.dinopoloclub.minimetro.nbo.LicensedActivity",
+    "drawable": "min_mini_metro",
+    "source": "device launcher query"
+  },
+  {
+    "component": "org.stanfordhealthcare.myhealth/epic.mychart.prelogin.SplashActivity",
+    "drawable": "min_stanford_health",
+    "source": "device launcher query"
+  },
+  {
+    "component": "org.sutterhealth.myhealthonline/epic.mychart.android.library.prelogin.SplashActivity",
+    "drawable": "min_sutter_health",
+    "source": "device launcher query"
+  },
+  {
+    "component": "org.wikipedia/org.wikipedia.DefaultIcon",
+    "drawable": "wikipedia",
+    "source": "device launcher query; existing package mapping"
+  },
+  {
+    "component": "us.zoom.videomeetings/com.zipow.videobox.LauncherActivity",
+    "drawable": "min_zoom",
+    "source": "https://github.com/Delta-Icons/android/blob/master/app/src/main/assets/appfilter.xml"
+  }
+]

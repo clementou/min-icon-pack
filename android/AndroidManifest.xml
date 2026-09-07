@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.github.clementou.miniconpack" android:versionCode="1" android:versionName="1.0.0">
+    <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="36" />
+    <queries><package android:name="com.teslacoilsw.launcher" /></queries>
+    <application android:label="Min Extended" android:icon="@drawable/min_pack"
+        android:theme="@android:style/Theme.Material.NoActionBar" android:allowBackup="false"
+        android:supportsRtl="true">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.adw.launcher.THEMES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.anddoes.launcher.THEME" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.novalauncher.THEME" />
+                <category android:name="com.novalauncher.category.CUSTOM_ICON_PICKER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
