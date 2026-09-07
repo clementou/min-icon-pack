@@ -94,17 +94,35 @@ def resources(stage):
     assert len({x[0] for x in catalog})==len(catalog)
     assert all(target in names for target in mappings.values())
     assert set(replacements.values()) <= set(mappings.values())
-    report=dict(package=PACKAGE,target_sdk=36,min_sdk=26,drawables=len(names),
+    sdk_ns='{http://schemas.android.com/apk/res/android}'
+    uses=ET.parse(ROOT/'android/AndroidManifest.xml').getroot().find('uses-sdk')
+    report=dict(package=PACKAGE,target_sdk=int(uses.get(sdk_ns+'targetSdkVersion')),
+                min_sdk=int(uses.get(sdk_ns+'minSdkVersion')),drawables=len(names),
                 picker_icons=len(catalog),mappings=len(mappings),reviewed_updates=len(fixes),
                 removed_broken_legacy_references=dropped)
     return report
 
+def newest(parent,key,stable_only=False):
+    """Pick the highest installed version of an SDK component.
+
+    Directory names do not track versions: build-tools 36.0.0 unpacks as
+    android-16 and 37.0.0 as android-37.0, so read source.properties instead.
+    """
+    found=[]
+    for properties in sorted(parent.glob('*/source.properties')):
+        values=dict(line.split('=',1) for line in properties.read_text().splitlines() if '=' in line)
+        if stable_only and values.get('AndroidVersion.CodeName'): continue
+        if key in values:
+            found.append(([int(n) for n in re.findall(r'\d+',values[key])],properties.parent))
+    if not found:
+        raise SystemExit('Run python3 scripts/bootstrap_android.py or set ANDROID_SDK_ROOT.')
+    return max(found)[1]
+
 def build():
     sdk=Path(os.environ.get('ANDROID_SDK_ROOT',ROOT/'.local/sdk'))
-    tools=sdk/'build-tools/36.0.0'
-    if not tools.exists(): tools=sdk/'build-tools/android-16'
-    platform=sdk/'platforms/android-36/android.jar'
-    if not tools.exists() or not platform.exists():
+    tools=newest(sdk/'build-tools','Pkg.Revision')
+    platform=newest(sdk/'platforms','AndroidVersion.ApiLevel',stable_only=True)/'android.jar'
+    if not platform.exists():
         raise SystemExit('Run python3 scripts/bootstrap_android.py or set ANDROID_SDK_ROOT.')
     java=Path(os.environ.get('JAVA_HOME','/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home'))
     env=os.environ.copy()
@@ -119,7 +137,7 @@ def build():
     run(tools/'aapt2','link','-o',linked,'-I',platform,'--manifest',ROOT/'android/AndroidManifest.xml',
         '-A',stage/'assets',compiled)
     classes=stage/'classes'; classes.mkdir()
-    run('javac','--release','8','-classpath',platform,'-d',classes,ROOT/'android/MainActivity.java')
+    run('javac','--release','11','-classpath',platform,'-d',classes,ROOT/'android/MainActivity.java')
     dex=stage/'dex'; dex.mkdir()
     run(tools/'d8','--lib',platform,'--min-api','26','--output',dex,*sorted(classes.rglob('*.class')))
     with zipfile.ZipFile(linked,'a',zipfile.ZIP_DEFLATED) as apk:

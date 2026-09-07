@@ -1,6 +1,6 @@
 # Min Extended
 
-An installable Android icon pack that continues [Min](https://play.google.com/store/apps/details?id=com.dkkim.min) after its author stopped updating it. It keeps all 1,547 original Min icons, adds 32 icons drawn in the same style for apps that shipped after the last release, and repairs mappings for apps whose package or launcher activity has since changed.
+An installable Android icon pack that continues [Min](https://play.google.com/store/apps/details?id=com.ryanmkelly.me.min), created in 2013 by [sixtyfour thirtytwo](https://www.sixtyfourthirtytwo.com/android.html) and no longer updated. It keeps all 1,547 original Min icons, adds 32 icons drawn in the same style for apps that shipped after the last release, and repairs mappings for apps whose package or launcher activity has since changed.
 
 Built and signed locally from the checked-in sources: no Gradle, no network access at build time.
 
@@ -12,7 +12,7 @@ python3 scripts/build_apk.py             # writes dist/min-extended-1.0.0.apk
 adb install dist/min-extended-1.0.0.apk
 ```
 
-The pack targets API 36, so it installs without `--bypass-low-target-sdk-block` — the flag the original 4.0.6.1 APK needs on current Android. Its application ID is `io.github.clementou.miniconpack`, distinct from the original, so both packs can be installed side by side.
+The pack targets API 37, so it installs without `--bypass-low-target-sdk-block` — the flag the original 4.0.6.1 APK needs, since it still targets API 23. Its application ID is `io.github.clementou.miniconpack`, distinct from the original, so both packs can be installed side by side.
 
 In Nova Launcher: **Settings → Look & feel → Icon style → Icon theme → Min Extended**.
 
@@ -32,7 +32,7 @@ Each is traced from publisher Play Store artwork and restyled to match Min: a wh
 
 ## Layout
 
-- `original/Min-4.0.6.1.apk` — the last published Min release, preserved unchanged.
+- `original/Min-4.0.6.1.apk` — the last published Min release (`com.ryanmkelly.me.min`), preserved unchanged.
 - `original/icons/` — 1,547 extracted 192 × 192 PNG resources.
 - `original/assets/` — the original `appfilter.xml`, `drawable.xml`, and theme configs.
 - `icons/` — the 32 additions: sources, vectors, PNGs, and their build.
@@ -42,10 +42,12 @@ Each is traced from publisher Play Store artwork and restyled to match Min: a wh
 
 ## Style notes
 
-Min's icons are white or near-white symbols on transparent canvases with a lot of empty space; the visible mark is much smaller than the canvas. Shapes are simplified with rounded details and restrained pale gray shading that reads as a slight fold. It is not a strictly flat style, and the symbol is never scaled to fill the canvas. When adding icons, compare visible size, stroke weight, and shading against several originals on both light and dark backgrounds.
+Min was made to let the wallpaper show through — minimal shadows on a white base. Its icons are white or near-white symbols on transparent canvases with a lot of empty space; the visible mark is much smaller than the canvas. Shapes are simplified with rounded details and restrained pale gray shading that reads as a slight fold. It is not a strictly flat style, and the symbol is never scaled to fill the canvas. When adding icons, compare visible size, stroke weight, and shading against several originals on both light and dark backgrounds.
 
 Monochrome adaptation necessarily drops brand color. Fine details and wordmarks are harder to read at launcher size — check `icons/gallery.html` at your preferred display size before committing to one.
 
 ## Credit
 
-Original artwork by the Min author. This repository is an unofficial continuation for personal use.
+Min was designed by [sixtyfour thirtytwo](https://www.sixtyfourthirtytwo.com/android.html), a graphic designer who spent four years on Android iconography — nine icon packs, two wallpaper collections, and over 12,000 icons, with more than a million downloads. Min itself launched in 2013 and passed 500,000 downloads. Their other work, including Tendere, Cast, Orbis, Hexacon, and Redux, is [on the Play Store](https://play.google.com/store/apps/dev?id=8299733615364824380).
+
+All original artwork in `original/` is theirs. This repository is an unofficial continuation for personal use, not affiliated with or endorsed by the original author.
