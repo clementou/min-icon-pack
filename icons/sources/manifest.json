@@ -1,0 +1,259 @@
+[
+  {
+    "id": "1password",
+    "name": "1Password",
+    "package": "com.onepassword.android",
+    "original": "onepassword",
+    "listing": "https://play.google.com/store/apps/details?id=com.onepassword.android&hl=en_US&gl=US",
+    "title": "1Password: Password Manager - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/3ckBn4bE0VULcacvvTJxnC4nHLIgMa81ZaQOCvZ0K4ygNir1VoArIlnrAPcSZhh2BwPLbQrJrxuMJO-SYEnjcB4=s0-br30"
+  },
+  {
+    "id": "microsoft-authenticator",
+    "name": "Microsoft Authenticator",
+    "package": "com.azure.authenticator",
+    "listing": "https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=en_US&gl=US",
+    "title": "Microsoft Authenticator - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/7Qf6PPkO5HPtxkkGdI56KAXonEzgzyUvQARaDWP3dUsmwweJEHAI1oiZf6tSZn1wkSKKj7SO-eemScUh9a5k=s0-br30"
+  },
+  {
+    "id": "beli",
+    "name": "Beli",
+    "package": "com.beliapp.myapp",
+    "listing": "https://play.google.com/store/apps/details?id=com.beliapp.myapp&hl=en_US&gl=US",
+    "title": "Beli - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/N1hBiPjuvsvbG_W2xHN6Dqdp-4h7jz8HEWJF1WIdrlsXGrR9b8mGCuSZgOw5h-OyzDgnyU7DgYgoxw8Wkjbwcw=s0-br30"
+  },
+  {
+    "id": "cbp-mpc",
+    "name": "CBP MPC",
+    "package": "gov.dhs.cbp.pspd.mpc",
+    "listing": "https://play.google.com/store/apps/details?id=gov.dhs.cbp.pspd.mpc&hl=en_US&gl=US",
+    "title": "Mobile Passport Control - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/bvduzyICS6oetHzfJV2odD_9Sqn5Ys3AavRJNsZ0vgoleEuM8blgURVtw_hTfDLLZAHV6SX9IpDhA2uYeDY0Gg=s0-br30"
+  },
+  {
+    "id": "chatgpt",
+    "name": "ChatGPT",
+    "package": "com.openai.chatgpt",
+    "listing": "https://play.google.com/store/apps/details?id=com.openai.chatgpt&hl=en_US&gl=US",
+    "title": "ChatGPT - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/T9J8e9oxxPd600j_KPM4KK2GHfNpUpGBdTy8lHPXBXpOUfGusRuZXj0UMgFNrP8we6LVt9V-AibEgcLootE6VK4=s0-br30"
+  },
+  {
+    "id": "chipotle",
+    "name": "Chipotle",
+    "package": "com.chipotle.ordering",
+    "listing": "https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US&gl=US",
+    "title": "Chipotle - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/a4rVFv-9Oz50Qg1kwEbA9fzhTP_PzHsrVHUZ2ZL9W_LffTodrrZOTIHWtwMLH4PH0H5Q0bTfX7UyXkqgjV1cHg=s0-br30"
+  },
+  {
+    "id": "doordash",
+    "name": "DoorDash",
+    "package": "com.dd.doordash",
+    "listing": "https://play.google.com/store/apps/details?id=com.dd.doordash&hl=en_US&gl=US",
+    "title": "DoorDash: Food, Grocery, More - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/daqnb5FdirTUewbv81mzwbnhD6_d1ITPYjM-XBFykk3QXRebKeaZLwWjyIbFKzLaEm6c12_wqVEHQhVrX3kO=s0-br30"
+  },
+  {
+    "id": "dunkin",
+    "name": "Dunkin",
+    "package": "com.dunkinbrands.otgo",
+    "listing": "https://play.google.com/store/apps/details?id=com.dunkinbrands.otgo&hl=en_US&gl=US",
+    "title": "Dunkin\u2019 - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/BDmtom97qcZLwQyPZ_g8g6Kvyp-PpltwQjDYNoai2uAl5q0NU440d0b4pbK0O2aa0RXLO1v2SOWWCcs3ZKEuwQ=s0-br30"
+  },
+  {
+    "id": "fidelity",
+    "name": "Fidelity",
+    "package": "com.fidelity.android",
+    "listing": "https://play.google.com/store/apps/details?id=com.fidelity.android&hl=en_US&gl=US",
+    "title": "Fidelity Investments - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/N56Fk3hFqKakNIzNBGo05K8hRaqRzArbQOcT3XLbWnWzC5O87cWZ1A8BWT7j3kI7id1HsawBoN_-ZpDHzL62HvM=s0-br30"
+  },
+  {
+    "id": "google-fi",
+    "name": "Google Fi",
+    "package": "com.google.android.apps.tycho",
+    "listing": "https://play.google.com/store/apps/details?id=com.google.android.apps.tycho&hl=en_US&gl=US",
+    "title": "Google Fi Wireless - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/O7z8Zd-vBE73syxJ-6hmFzh609LnadRlGC2eSQs-_oQE0WmlKT_5arf8ZBYl4Ecle8yyzqGxWYAd-E7BAtoH3w=s0-br30"
+  },
+  {
+    "id": "google-one",
+    "name": "Google One",
+    "package": "com.google.android.apps.subscriptions.red",
+    "listing": "https://play.google.com/store/apps/details?id=com.google.android.apps.subscriptions.red&hl=en_US&gl=US",
+    "title": "Google One - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/pnaxOl9i4YnkYKGMYkH17y_hA_FJOZRahlRGHQaaEGuLwPme68AfPShN2na5dEGOsem3hEzFvWXMz62WPVx8=s0-br30"
+  },
+  {
+    "id": "grubhub",
+    "name": "Grubhub",
+    "package": "com.grubhub.android",
+    "listing": "https://play.google.com/store/apps/details?id=com.grubhub.android&hl=en_US&gl=US",
+    "title": "Grubhub: Food Delivery - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/yQanUgJ0Hbbbp6RZzoJbM_yG5FE3qLCsoxx75pc4LoRisGT852s3KZI5SLr8UWg32HAkR8ZU4VsWFw3y-FQzZA=s0-br30"
+  },
+  {
+    "id": "google-health",
+    "name": "Google Health",
+    "package": "com.fitbit.FitbitMobile",
+    "listing": "https://play.google.com/store/apps/details?id=com.fitbit.FitbitMobile&hl=en_US&gl=US",
+    "title": "Google Health (Fitbit) - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/W1N5QAjSPsNwmwLo135MWqTnlCpkULVTVvf4eN_FekTOJ3gV53vi_lhxd3pk8oVXdUuqKPU8SkhA1iRnPzJeng=s0-br30"
+  },
+  {
+    "id": "instacart",
+    "name": "Instacart",
+    "package": "com.instacart.client",
+    "listing": "https://play.google.com/store/apps/details?id=com.instacart.client&hl=en_US&gl=US",
+    "title": "Instacart: Get Food Delivery - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/I2bF7DVVaAkY6fY29oI1k5Wo-_8NSN7KNGAIribuFeMF6_NzFu9S9Zp3Ptx3gMr_EC4QriSdq-aZ_qkYEZy9Wx0=s0-br30"
+  },
+  {
+    "id": "lemonade",
+    "name": "Lemonade",
+    "package": "com.lemonadeinc.lemonade",
+    "listing": "https://play.google.com/store/apps/details?id=com.lemonadeinc.lemonade&hl=en_US&gl=US",
+    "title": "Lemonade Insurance - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/5RU7Nf4M_rfSQ3Ql-ZJbIGBnX-NKeLJ1qxewm6cmDeMqvTNZVBJg7IqOuXMdmXdxBzelfsGohkyD3uuixC2vzg=s0-br30"
+  },
+  {
+    "id": "mini-metro",
+    "name": "Mini Metro",
+    "package": "nz.co.codepoint.minimetro",
+    "listing": "https://play.google.com/store/apps/details?id=nz.co.codepoint.minimetro&hl=en_US&gl=US",
+    "title": "Mini Metro - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/bgegeucl21_gtufWoV9PEqoDfeNfsy2fvX_uVN2x-CaoeQEq1DH4HECywYI_S3OwTwBLaaVO1H4Y0DUQoc4-XA=s0-br30"
+  },
+  {
+    "id": "sutter-health",
+    "name": "Sutter Health My Health Online",
+    "package": "org.sutterhealth.myhealthonline",
+    "listing": "https://play.google.com/store/apps/details?id=org.sutterhealth.myhealthonline&hl=en_US&gl=US",
+    "title": "Sutter Health My Health Online - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/_ubiBhTYyJvW_z7wIjAwyKw7k1xDe4ENnFW6g_pCLB_RMh0ajqgl54yqVsNainnkAzYyo1BkdW02rK_t4BcuMQI=s0-br30"
+  },
+  {
+    "id": "stanford-health",
+    "name": "Stanford Health Care MyHealth",
+    "package": "org.stanfordhealthcare.myhealth",
+    "listing": "https://play.google.com/store/apps/details?id=org.stanfordhealthcare.myhealth&hl=en_US&gl=US",
+    "title": "Stanford Health Care MyHealth - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/CEX_hHjPY1yODrV-YZ0Lag2MZK_pYEkp0o6KG_yNtJ5yNY6Q3aB-Iwwac9g3Hpd4gB0sYE1psr_grAZ_z65v=s0-br30"
+  },
+  {
+    "id": "okta-verify",
+    "name": "Okta Verify",
+    "package": "com.okta.android.auth",
+    "listing": "https://play.google.com/store/apps/details?id=com.okta.android.auth&hl=en_US&gl=US",
+    "title": "Okta Verify - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/t1uQDLhvRlH2W31wglaIkyRujsngFFW6YGUTGDQhUmgIiqjKyF5IA6E8Y1J6Yw_HqScT5hwiJhO-F5MnyeNdaw=s0-br30"
+  },
+  {
+    "id": "oura",
+    "name": "Oura",
+    "package": "com.ouraring.oura",
+    "listing": "https://play.google.com/store/apps/details?id=com.ouraring.oura&hl=en_US&gl=US",
+    "title": "Oura - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/5mz7MxEkUtzJzPlPrSFx4pboosI8vXSCQEGCwwoGQth8Vu8Bwu-dmmbmQK669T81O5B6UcJ2Yu7O-ny1KeWE6A=s0-br30"
+  },
+  {
+    "id": "pagerduty",
+    "name": "PagerDuty",
+    "package": "com.pagerduty.android",
+    "listing": "https://play.google.com/store/apps/details?id=com.pagerduty.android&hl=en_US&gl=US",
+    "title": "PagerDuty - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/2Q1BpElWjM3Od5nlnwjyKN_pGLQxV1vU95OurOm2wm-2lT8-mnTRBTrE_dV9VGr0xpheaJXvvqX8FMSIWcyTEIo=s0-br30"
+  },
+  {
+    "id": "parkmobile",
+    "name": "ParkMobile",
+    "package": "net.sharewire.parkmobilev2",
+    "listing": "https://play.google.com/store/apps/details?id=net.sharewire.parkmobilev2&hl=en_US&gl=US",
+    "title": "ParkMobile: Park. Pay. Go. - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/CgWHTUJcYn8d-gaI4cGQczB9zZ7buh249SWLHKbGVwIM4VErZX5dFZuja2JzS_33siq8QMRMB2Iczg30iSoS=s0-br30"
+  },
+  {
+    "id": "renpho-health",
+    "name": "RENPHO Health",
+    "package": "com.renpho.health",
+    "listing": "https://play.google.com/store/apps/details?id=com.renpho.health&hl=en_US&gl=US",
+    "title": "RENPHO Health - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/58ij16_Oe2p67WZDzBCRPpgpMF78THhjlWlexC2kNB9gj_AUjUa2aHzzA-7bG6AY3njimiOXB6pS__0rGfgHsw=s0-br30"
+  },
+  {
+    "id": "roborock",
+    "name": "Roborock",
+    "package": "com.roborock.smart",
+    "listing": "https://play.google.com/store/apps/details?id=com.roborock.smart&hl=en_US&gl=US",
+    "title": "Roborock - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/KBCfMngat5Zsbas2uMY4Edsq9sN0Vol7-Jx8WkpDdy5nLdAYfmXGnFwhTZfl_Jkg51NVmaSeL6MovLNUqxNz=s0-br30"
+  },
+  {
+    "id": "schwab",
+    "name": "Charles Schwab",
+    "package": "com.schwab.mobile",
+    "listing": "https://play.google.com/store/apps/details?id=com.schwab.mobile&hl=en_US&gl=US",
+    "title": "Schwab Mobile - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/3yXnnZWiZhcGCvfY2TeNdimoI01-INENgBYwRKtG2GH8MJsnCgun_syUvHqJxomETuSjm_Df2eLqkXNvCL8k=s0-br30"
+  },
+  {
+    "id": "tesla",
+    "name": "Tesla",
+    "package": "com.teslamotors.tesla",
+    "listing": "https://play.google.com/store/apps/details?id=com.teslamotors.tesla&hl=en_US&gl=US",
+    "title": "Tesla - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/UzdRAQDS0HBndAYrjplxcf0qEEEoC-NNZQcefNOJeLN8nrtybgUN2ZxWHZ7WOzxR8ASPrjR57zzkaPWQDXA7=s0-br30"
+  },
+  {
+    "id": "tiktok",
+    "name": "TikTok",
+    "package": "com.zhiliaoapp.musically",
+    "listing": "https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically&hl=en_US&gl=US",
+    "title": "TikTok - Videos, Shop & LIVE - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/2o7iuqPe-0msP3DvNhzoOgNo4eZ6GkL_RtGVeKyBn5UBQAW5cw-GW5V3wDOHB1yTQuqWzrFLFOv2u4_5ea1uhg=s0-br30"
+  },
+  {
+    "id": "uber-eats",
+    "name": "Uber Eats",
+    "package": "com.ubercab.eats",
+    "listing": "https://play.google.com/store/apps/details?id=com.ubercab.eats&hl=en_US&gl=US",
+    "title": "Uber Eats: Food and Grocery - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/nQpl8xd3y1dpvHp-VcZrQ7H8ikP5jDYi0tYdS-FzqKyb0qqBb-0FVzuC3eepETxYECADHSitC89yhvWkXxcy=s0-br30"
+  },
+  {
+    "id": "united-airlines",
+    "name": "United Airlines",
+    "package": "com.united.mobile.android",
+    "listing": "https://play.google.com/store/apps/details?id=com.united.mobile.android&hl=en_US&gl=US",
+    "title": "United Airlines - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/DViJ4gWGE-x8OQFuEqIEjXgyMLDWb6g2yLTo4Tf1xm2j4-myXGsz-uAjOOXRJTu0jNvGwmgkyaAoGMBDQZA=s0-br30"
+  },
+  {
+    "id": "waymo",
+    "name": "Waymo",
+    "package": "com.waymo.carapp",
+    "listing": "https://play.google.com/store/apps/details?id=com.waymo.carapp&hl=en_US&gl=US",
+    "title": "Waymo - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/3CqFm1xSPu4892m6DbNZpyI4h-UNQTWBgHDlH1QDod1_yxGyfw9s0p2oOFCSZ4Olcpdku8pfzgulecAvOLyQ=s0-br30"
+  },
+  {
+    "id": "wealthfront",
+    "name": "Wealthfront",
+    "package": "com.wealthfront",
+    "listing": "https://play.google.com/store/apps/details?id=com.wealthfront&hl=en_US&gl=US",
+    "title": "Wealthfront: Save and Invest - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/kpq0X5DCm_6zBYadvHUxPZvSC6mw0Jxo0bolMZLN2cb_GG9rXBRJ8mCJ3W6k9Nce1_dJ5athq4e-53dIst-_6w=s0-br30"
+  },
+  {
+    "id": "zoom",
+    "name": "Zoom",
+    "package": "us.zoom.videomeetings",
+    "listing": "https://play.google.com/store/apps/details?id=us.zoom.videomeetings&hl=en_US&gl=US",
+    "title": "Zoom Workplace - Apps on Google Play",
+    "image_url": "https://play-lh.googleusercontent.com/-Ajlo-aDBHtpCez_yILc8Kepv_kNhbTJPw1WyvXgkh4O-hvUN-YD_v_0FlJmgRbZ2vn1OmZCmCBOY23h4kJYEA=s0-br30"
+  }
+]

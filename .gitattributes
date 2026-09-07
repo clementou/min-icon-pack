@@ -1,0 +1,7 @@
+original/icons/*.png binary
+icons/png/*.png binary
+icons/sources/*.png binary
+original/*.apk binary
+icons/svg/*.svg linguist-generated=true
+icons/sources/*.json linguist-generated=true
+original/assets/*.xml linguist-vendored=true

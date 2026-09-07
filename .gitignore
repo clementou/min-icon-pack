@@ -1,0 +1,16 @@
+.venv*/
+.local/
+.build/
+dist/
+__pycache__/
+.DS_Store
+*.keystore
+*.jks
+*.idsig
+icons/masks/
+icons/traces/
+icons/gallery.html
+icons/min-additions.zip
+icons/build-report.json
+original/gallery.html
+original/icons.json

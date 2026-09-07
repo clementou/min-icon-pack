@@ -1,0 +1,4 @@
+pillow==12.3.0
+vtracer==0.6.15
+cairosvg==2.9.0
+requests==2.34.2
