@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.1
+
+- Restore the original Min-style dark rim and downward shadow on all 33 newly drawn icons, improving contrast on white backgrounds.
+- Generate shadows automatically in the artwork pipeline; preserve the original 1Password PNG unchanged.
+- Add a white-background preview and document reproducible shadow rendering.
+
+This is a patch release correcting existing artwork. Android versionCode increases to 3; target SDK, application ID, mappings, and signing key are unchanged.
+
 ## 1.1.0
 
 - Add Personal Safety and Welcome Virtual Doorman icons, with launcher components verified on a connected device.

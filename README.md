@@ -9,15 +9,15 @@ Built and signed locally from the checked-in sources without Gradle. Python scri
 Download the APK from [the latest release](https://github.com/clementou/min-icon-pack/releases/latest) and open it on the phone, or:
 
 ```sh
-adb install -r min-extended-1.1.0.apk
+adb install -r min-extended-1.1.1.apk
 ```
 
 To build it yourself instead:
 
 ```sh
 uv run scripts/bootstrap_android.py     # one-time: fetch pinned Android SDK archives into .local/
-uv run scripts/build_apk.py             # writes dist/min-extended-1.1.0.apk
-adb install -r dist/min-extended-1.1.0.apk
+uv run scripts/build_apk.py             # writes dist/min-extended-1.1.1.apk
+adb install -r dist/min-extended-1.1.1.apk
 ```
 
 The pack targets API 37, so it installs without `--bypass-low-target-sdk-block` — the flag the original 4.0.6.1 APK needs, since it still targets API 23. Its application ID is `io.github.clementou.miniconpack`, distinct from the original, so both packs can be installed side by side.

@@ -4,7 +4,9 @@ The 34 icons added on top of the original Min pack. `scripts/build_apk.py` bundl
 
 To apply one without installing the pack, Nova can override icons individually: extract `min-additions.zip` on the phone, long-press an app shortcut, choose **Edit** (pencil), tap its icon, choose **Gallery apps**, and pick the matching PNG. Keep the whole square image including its transparent padding — Min relies on those margins to keep icons small.
 
-Open `gallery.html` to compare the additions with official Play Store artwork and original Min icons. `preview.jpg` shows all 34 on a dark background.
+Open `gallery.html` to compare the additions with official Play Store artwork and original Min icons. `preview.jpg` shows all 34 on a dark background; `preview-white.jpg` shows them on white.
+
+The new artwork includes the original pack's approximately one-pixel dark rim and small downward shadow at 40% black opacity, in addition to the pale gray lower edge. The generator embeds a supersampled shadow image beneath the vector face in each SVG because CairoSVG does not support the required SVG shadow filters. The copied original 1Password PNG is unchanged.
 
 ## Sources and editable files
 

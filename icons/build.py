@@ -11,13 +11,14 @@ internal logo detail. No generative images are used by this build.
 from pathlib import Path
 from html import escape
 import io
+import base64
 import json
 import shutil
 import xml.etree.ElementTree as ET
 import zipfile
 import cairosvg
 import vtracer
-from PIL import Image, ImageDraw, ImageFont, ImageChops
+from PIL import Image, ImageDraw, ImageFont, ImageChops, ImageFilter
 
 ROOT = Path(__file__).resolve().parent
 APPS = json.loads((ROOT / 'apps.json').read_text())
@@ -31,6 +32,27 @@ DARK_ON_LIGHT = {'chatgpt', 'beli', 'cbp-mpc', 'okta-verify', 'uber-eats'}
 WIDTHS = {'stanford-health':84, 'chipotle':78, 'microsoft-authenticator':80,
           'dunkin':88, 'renpho-health':90, 'beli':84, 'uber-eats':80,
           'zoom':86, 'cbp-mpc':86, 'google-fi':78, 'mini-metro':80}
+
+def with_shadow(svg):
+    """Match original Min's ~1px black rim and 2px downward, 40% shadow.
+
+    CairoSVG does not implement SVG morphology/blur filters. Embed only the
+    shadow as a supersampled alpha image; keep the face as editable vectors so
+    SVG previews and the final PNG have identical shading in every renderer.
+    """
+    rendered = cairosvg.svg2png(bytestring=svg.encode(), output_width=768, output_height=768)
+    alpha = Image.open(io.BytesIO(rendered)).convert('RGBA').getchannel('A')
+    rim = alpha.filter(ImageFilter.MaxFilter(9))  # 1px expansion at 4× resolution
+    shifted = Image.new('L', alpha.size)
+    shifted.paste(rim, (0, 8))  # two canvas pixels down; no wraparound
+    shadow_alpha = ImageChops.lighter(rim, shifted).filter(ImageFilter.GaussianBlur(1))
+    shadow = Image.new('RGBA', alpha.size, (0, 0, 0, 0))
+    shadow.putalpha(shadow_alpha.point(lambda a: round(a * 0.4)))
+    buffer = io.BytesIO(); shadow.save(buffer, format='PNG')
+    encoded = base64.b64encode(buffer.getvalue()).decode('ascii')
+    layer = f'<image width="192" height="192" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,{encoded}"/>'
+    end = svg.index('>') + 1
+    return svg[:end] + '\n' + layer + svg[end:]
 
 def make_mask(app, image, layer='main'):
     key = app['id']
@@ -157,6 +179,8 @@ def build():
                 overlay=trace(key+'-blue',make_mask(app,image,'safety-blue'))
             svg = style_svg(app,trace(key,mask),bounds,overlay)
             method = 'Traced publisher Play Store artwork'
+        if not original:
+            svg = with_shadow(svg)
         (ROOT/'svg'/(key+'.svg')).write_text(svg)
         if not original:
             rendered = cairosvg.svg2png(bytestring=svg.encode(), output_width=768,output_height=768)
@@ -178,7 +202,9 @@ def build():
 
 def gallery(report):
     font = ImageFont.truetype(str(ROOT/'sources/Inter.ttf'),14)
-    sheet = Image.new('RGB',(1200,1200),'#282b30')
+    sheet = Image.new('RGB',(1200,((len(APPS)+5)//6)*200),'#282b30')
+    light_sheet = Image.new('RGB', sheet.size, 'white')
+    light_draw = ImageDraw.Draw(light_sheet)
     draw = ImageDraw.Draw(sheet)
     cards = []
     for i,(app,item) in enumerate(zip(APPS,report)):
@@ -186,10 +212,13 @@ def gallery(report):
         im = Image.open(ROOT/'png'/(key+'.png')).convert('RGBA')
         x,y=(i%6)*200,(i//6)*200
         sheet.paste(im,(x+4,y-12),im)
+        light_sheet.paste(im,(x+4,y-12),im)
+        light_draw.text((x+8,y+165),key,fill='#333',font=font)
         draw.text((x+8,y+165),key,fill='#ddd',font=font)
         listing='https://play.google.com/store/apps/details?id='+app['package']
         cards.append(f'''<article data-search="{escape(name.lower())}"><h2>{escape(name)}</h2><div class="pair"><figure><img class="source" src="sources/{key}.png" alt="Official {escape(name)} icon"><figcaption>Play Store</figcaption></figure><figure><a href="png/{key}.png" download><img class="min" src="png/{key}.png" alt="Min-style {escape(name)} icon"></a><figcaption>Min adaptation</figcaption></figure></div><footer><a href="png/{key}.png" download>PNG</a><a href="svg/{key}.svg" download>SVG</a><a href="{listing}">Source</a></footer></article>''')
     sheet.save(ROOT/'preview.jpg',quality=95)
+    light_sheet.save(ROOT/'preview-white.jpg',quality=95)
     refs=''.join(f'<figure><img class="min" src="../original/icons/{n}.png" alt="Original Min {n}"><figcaption>{n}</figcaption></figure>' for n in ['spotify','twitter','telegram','instagram','googlephotos','onepassword'])
     page='''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Min additions — 32 apps</title>
 <style>:root{font-family:system-ui;color:#eee;background:#191b20;color-scheme:dark;--tile:#292d33;--size:144px}body{margin:28px auto;padding:0 22px;max-width:1300px}h1{font-size:28px;margin-bottom:8px}p{color:#b8bec8;line-height:1.5}a{color:#abcaff}header{margin-bottom:24px}.controls{display:flex;gap:20px;flex-wrap:wrap;align-items:center}input[type=search]{padding:10px;background:#2c3037;border:1px solid #68707e;border-radius:6px;color:white;font:inherit}#grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}article{background:var(--tile);border-radius:12px;padding:16px}h2{font-size:15px;margin:0 0 12px}figure{margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0}figcaption{font-size:11px;color:#b8bec8;margin:6px 0}.pair{display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:150px}.source{width:76px;height:76px;border-radius:12px}.min{width:var(--size);height:var(--size);object-fit:contain}footer{display:flex;gap:20px;margin-top:12px;font-size:12px}#refs{display:flex;flex-wrap:wrap;background:var(--tile);border-radius:12px;margin:16px 0 28px;padding:8px}#refs figure{flex:1}#refs .min{max-width:100%}[hidden]{display:none!important}</style>
