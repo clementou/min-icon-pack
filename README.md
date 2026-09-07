@@ -6,6 +6,14 @@ Built and signed locally from the checked-in sources: no Gradle, no network acce
 
 ## Install
 
+Download the APK from [the latest release](https://github.com/clementou/min-icon-pack/releases/latest) and open it on the phone, or:
+
+```sh
+adb install min-extended-1.0.0.apk
+```
+
+To build it yourself instead:
+
 ```sh
 python3 scripts/bootstrap_android.py     # one-time: fetch pinned Android SDK archives into .local/
 python3 scripts/build_apk.py             # writes dist/min-extended-1.0.0.apk
