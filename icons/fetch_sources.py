@@ -1,3 +1,7 @@
+# /// script
+# requires-python = ">=3.12"
+# dependencies = ["pillow==12.3.0", "requests==2.34.2"]
+# ///
 """Download publisher-provided Play Store artwork and record its provenance."""
 from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser

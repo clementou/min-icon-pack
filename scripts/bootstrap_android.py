@@ -1,3 +1,7 @@
+# /// script
+# requires-python = ">=3.12"
+# dependencies = []
+# ///
 """Fetch pinned official Android SDK archives into ignored local storage."""
 from pathlib import Path
 import hashlib

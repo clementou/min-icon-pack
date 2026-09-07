@@ -20,15 +20,13 @@ Monochrome adaptations necessarily remove the brand colors. Authenticator retain
 
 ## Rebuild
 
-Use Python 3.12 (the installed vtracer build crashes under Python 3.14).
+Run the scripts directly with uv. Each script declares its own pinned dependencies. The icon builder also requires Python 3.12 because vtracer crashes under Python 3.14; uv selects the compatible interpreter automatically.
 
 ```sh
-uv venv --python python3.12 .venv-icons
-uv pip install --python .venv-icons/bin/python -r icons/requirements.txt
-.venv-icons/bin/python icons/fetch_sources.py
-.venv-icons/bin/python icons/build.py
+uv run icons/fetch_sources.py
+uv run icons/build.py
 ```
 
-The fetcher caches existing downloads; the builder regenerates the SVGs, PNGs, gallery, preview, and zip from the saved sources. Source-specific extraction rules are in `build.py`.
+The fetcher caches existing downloads; only run it when sources are missing. The builder regenerates SVGs, PNGs, gallery, preview, and zip from saved sources. Make reproducible edits in `build.py`: direct SVG edits are overwritten. After artwork changes, run `uv run scripts/build_apk.py` to package and automatically verify them. Mapping-only changes do not need an artwork rebuild.
 
 Reference for Nova's individual PNG workflow: https://www.androidcentral.com/how-make-custom-icon-android

@@ -1,6 +1,10 @@
+# /// script
+# requires-python = ">=3.12,<3.13"
+# dependencies = ["pillow==12.3.0", "vtracer==0.6.15", "cairosvg==2.9.0"]
+# ///
 """Trace publisher artwork, style editable vectors, and render Min-size PNGs.
 
-Run with .venv-icons/bin/python icons/build.py (Python 3.12).
+Run with uv run icons/build.py (uv selects Python 3.12 automatically).
 Source-specific masks are intentional: automatic background removal alone loses
 internal logo detail. No generative images are used by this build.
 """

@@ -1,3 +1,7 @@
+# /// script
+# requires-python = ">=3.12"
+# dependencies = ["pillow==12.3.0"]
+# ///
 """Verify that APK resource compilation preserved the checked-in artwork."""
 import io
 import json

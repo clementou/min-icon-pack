@@ -2,7 +2,7 @@
 
 An installable Android icon pack that continues [Min](https://play.google.com/store/apps/details?id=com.ryanmkelly.me.min), created in 2013 by [sixtyfour thirtytwo](https://www.sixtyfourthirtytwo.com/android.html) and no longer updated. It keeps all 1,547 original Min icons, adds 34 icons drawn in the same style, and repairs mappings for apps whose package or launcher activity has since changed.
 
-Built and signed locally from the checked-in sources: no Gradle, no network access at build time.
+Built and signed locally from the checked-in sources without Gradle. Python scripts use `uv run` with inline dependency metadata; uv manages Python and isolated dependencies automatically. The APK build runs offline once Python and the Android SDK are available.
 
 ## Install
 
@@ -15,8 +15,8 @@ adb install -r min-extended-1.1.0.apk
 To build it yourself instead:
 
 ```sh
-python3 scripts/bootstrap_android.py     # one-time: fetch pinned Android SDK archives into .local/
-python3 scripts/build_apk.py             # writes dist/min-extended-1.1.0.apk
+uv run scripts/bootstrap_android.py     # one-time: fetch pinned Android SDK archives into .local/
+uv run scripts/build_apk.py             # writes dist/min-extended-1.1.0.apk
 adb install -r dist/min-extended-1.1.0.apk
 ```
 
@@ -24,7 +24,7 @@ The pack targets API 37, so it installs without `--bypass-low-target-sdk-block` 
 
 In Nova Launcher: **Settings → Look & feel → Icon style → Icon theme → Min Extended**.
 
-Java 17+ must be available. The build looks for `JAVA_HOME`, falling back to Homebrew's `openjdk`.
+[uv](https://docs.astral.sh/uv/guides/scripts/) and Java 17+ must be available. The build looks for `JAVA_HOME`, falling back to Homebrew's `openjdk`. No manual virtual environment setup is needed.
 
 ## New icons
 
@@ -38,7 +38,11 @@ The icons use publisher Play Store artwork or editable vector designs restyled t
 
 `android/mappings.json` holds 56 reviewed component fixes on top of the original `appfilter.xml`. The requested app mappings include 31 verified by querying launcher activities on a connected device; the rest cover package renames, activity aliases (Google Health launches through `com.fitbit.HealthBrandedAlias`, for instance), and three apps that were not installed and were cross-checked against the Delta Icons appfilter.
 
-`scripts/audit_mappings.py` re-runs that audit against whatever is installed on an attached device and proposes repairs. Inventory it produces stays in ignored `.local/`.
+Edit `android/mappings.json` directly, then run `uv run scripts/build_apk.py`. The build validates schema, duplicates, drawable existence, and new-app mapping coverage, and automatically verifies compiled artwork and mappings. Actual launcher activities still need device or manifest verification: a valid-looking typo cannot be detected offline.
+
+For artwork changes, run `uv run icons/build.py` first. Source fetching and SDK bootstrap are only needed when inputs are missing. `scripts/verify_assets.py` is called automatically by the build; it can also verify an existing APK independently. The obsolete audit and migration scripts have been removed.
+
+The repository skill [min-icon-pack](.agents/skills/min-icon-pack/SKILL.md) is the agent handoff guide for adding icons, checking components, matching the style, and releasing. Script comments explain implementation details.
 
 ## Layout
 
@@ -47,7 +51,7 @@ The icons use publisher Play Store artwork or editable vector designs restyled t
 - `original/assets/` — the original `appfilter.xml`, `drawable.xml`, and theme configs.
 - `icons/` — the 34 additions: sources, vectors, PNGs, and their build.
 - `android/` — `AndroidManifest.xml`, `MainActivity.java`, and the mapping fixes.
-- `scripts/` — SDK bootstrap, APK build, and the mapping audit.
+- `scripts/` — SDK bootstrap, APK build, and automatic asset verification.
 - `dist/` — build output (ignored).
 
 ## Style notes
